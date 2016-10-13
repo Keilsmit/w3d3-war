@@ -39,19 +39,20 @@ class Game
       round
     end
     output
+    rematch
   end
   # Full game ends here
 
   def output
     if player1_wins > player2_wins
-      puts "Player 1 won this game after #{round_number} rounds and survived #{tie} WARs."
+      puts "Player 1: (with a score of) #{player1_wins}\n\n Won this game! \n\nAfter #{round_number} rounds and survived #{tie} WARs."
     elsif player1_wins < player2_wins
-      puts "Player 2 won this game after #{round_number} rounds and survived #{tie} WARs."
-    else
-      puts "ERRRRRRRRRROOOOOOOOOORRRRRR"
-      puts player1_wins
-      puts player2_wins
-      puts tie
+      puts "Player 2: (with a score of) #{player2_wins}\n\n Won this game! \n\nAfter #{round_number} rounds and survived #{tie} WARs."
+    # else
+    #   puts "ERRRRRRRRRROOOOOOOOOORRRRRR"
+    #   puts player1_wins
+    #   puts player2_wins
+    #   puts tie
     end
   end
 
@@ -61,7 +62,7 @@ class Game
         if desire == "y"
           Game.new.full_game
         else
-          puts "Thank you for play!"
+          puts "Thank you for playing! Try again later."
         end
   end
   # Rematch ends here
